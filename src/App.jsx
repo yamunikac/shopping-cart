@@ -1,17 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import ProductCard from "./components/ProductCard";
 
 function App() {
-  return (
-    <>
+  const [products, setProducts] = useState([]);
 
-      <h1>
-        My Shopping Cart
-      </h1>
-    </>
-  )
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch((error) => {
+        console.log("Error fetching products:", error);
+      });
+  }, []);
+
+  return (
+    <div>
+      <Navbar />
+
+      <div style={styles.container}>
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default App
+const styles = {
+  container: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+    gap: "20px",
+    padding: "30px",
+  },
+};
+
+export default App;
