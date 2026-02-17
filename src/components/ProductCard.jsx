@@ -13,10 +13,7 @@ const ProductCard = ({ product }) => {
 
       <p style={styles.price}>${product.price}</p>
 
-      <div style={styles.buttonContainer}>
-        <button style={styles.cartButton}>Add to Cart</button>
-        <button style={styles.buyButton}>Buy Now</button>
-      </div>
+      <button style={styles.viewButton}>View Details</button>
     </div>
   );
 };
@@ -42,25 +39,13 @@ const styles = {
     fontWeight: "bold",
     margin: "10px 0",
   },
-  buttonContainer: {
-    display: "flex",
-    justifyContent: "space-between",
-    gap: "10px",
-  },
-  cartButton: {
-    flex: 1,
-    padding: "8px",
-    backgroundColor: "green",
+  viewButton: {
+    width: "100%",
+    padding: "10px",
+    backgroundColor: "#007bff",
     color: "white",
     border: "none",
-    cursor: "pointer",
-  },
-  buyButton: {
-    flex: 1,
-    padding: "8px",
-    backgroundColor: "orange",
-    color: "white",
-    border: "none",
+    borderRadius: "5px",
     cursor: "pointer",
   },
 };
