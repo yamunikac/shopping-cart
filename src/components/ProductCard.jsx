@@ -9,32 +9,43 @@ const ProductCard = ({ product }) => {
         style={styles.image}
       />
 
-      <h4>{product.title}</h4>
+      <h4 style={styles.title}>{product.title}</h4>
 
-      <p>Price: ${product.price}</p>
+      <p style={styles.price}>${product.price}</p>
 
-      <button style={styles.button}>View Details</button>
+      <button style={styles.viewButton}>View Details</button>
     </div>
   );
 };
 
 const styles = {
   card: {
-    border: "1px solid #ccc",
-    padding: "10px",
-    margin: "10px",
+    backgroundColor: "white",
+    padding: "15px",
+    borderRadius: "8px",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
     textAlign: "center",
   },
   image: {
-    width: "150px",
-    height: "150px",
+    width: "100%",
+    height: "200px",
     objectFit: "contain",
   },
-  button: {
-    padding: "6px 12px",
-    backgroundColor: "gray",
+  title: {
+    fontSize: "14px",
+    minHeight: "50px",
+  },
+  price: {
+    fontWeight: "bold",
+    margin: "10px 0",
+  },
+  viewButton: {
+    width: "100%",
+    padding: "10px",
+    backgroundColor: "#007bff",
     color: "white",
     border: "none",
+    borderRadius: "5px",
     cursor: "pointer",
   },
 };
