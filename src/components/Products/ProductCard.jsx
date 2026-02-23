@@ -1,6 +1,9 @@
-import "./ProductCard.css";
+import { useNavigate } from "react-router-dom";
+import "./ProductCard.css";   // 🔥 IMPORTANT
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="card">
       <img src={product.image} alt={product.title} />
@@ -9,7 +12,14 @@ const ProductCard = ({ product }) => {
 
       <p className="price">${product.price}</p>
 
-      <button className="details-btn">View Details</button>
+      <button
+        className="details-btn"
+        onClick={() =>
+          navigate(`/shopping-cart/product/${product.id}`)
+        }
+      >
+        View Details
+      </button>
     </div>
   );
 };
