@@ -1,28 +1,58 @@
 import { useContext } from "react";
 import { CartContext } from "./CC";
+import "./Cart.css";
 
 const Cart = () => {
-  const { cart, removeFromCart } = useContext(CartContext);
+const { cart, removeFromCart } = useContext(CartContext);
 
-  return (
-    <div style={{ padding: "40px" }}>
-      <h2>Your Cart</h2>
+const totalPrice = cart.reduce(
+(total, item) => total + item.price * item.quantity,
+0
+);
 
-      {cart.length === 0 && <p>Cart is empty</p>}
+return ( <div className="cart-page">
 
-      {cart.map(item => (
-        <div key={item.id} style={{ marginBottom: "20px" }}>
-          <h4>{item.title}</h4>
-          <p>Price: ${item.price}</p>
-          <p>Quantity: {item.quantity}</p>
+  <h2 className="cart-title">Your Cart</h2>
 
-          <button onClick={() => removeFromCart(item.id)}>
-            Remove
-          </button>
-        </div>
-      ))}
-    </div>
-  );
+  {cart.length === 0 ? (
+    <p className="empty-cart">Your cart is empty.</p>
+  ) : (
+    <>
+      <div className="cart-items">
+
+        {cart.map((item) => (
+          <div className="cart-item" key={item.id}>
+
+            <img src={item.image} alt={item.title} />
+
+            <div className="cart-info">
+              <h3>{item.title}</h3>
+              <p>${item.price}</p>
+              <p>Qty: {item.quantity}</p>
+            </div>
+
+            <button
+              className="remove-btn"
+              onClick={() => removeFromCart(item.id)}
+            >
+              Remove
+            </button>
+
+          </div>
+        ))}
+
+      </div>
+
+      <div className="cart-summary">
+        <h3>Total: ${totalPrice.toFixed(2)}</h3>
+        <button className="checkout-btn">Checkout</button>
+      </div>
+    </>
+  )}
+
+</div>
+
+);
 };
 
 export default Cart;

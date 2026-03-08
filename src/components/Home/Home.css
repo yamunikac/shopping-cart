@@ -1,0 +1,50 @@
+.home-container{
+  min-height:90vh;
+  background-image:url("/i3.png");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+  align-items:center;
+  padding-left:80px;
+}
+
+/* TEXT AREA */
+
+.home-content{
+  max-width:420px;
+}
+
+/* TITLE */
+
+.home-content h1{
+  font-size:60px;
+  color:#a5602a;
+  margin-bottom:15px;
+}
+
+/* DESCRIPTION */
+
+.home-content p{
+  font-size:18px;
+  color:#555;
+  margin-bottom:25px;
+}
+
+/* BUTTON */
+
+.explore-btn{
+  padding:12px 28px;
+  background:#c97c2f;
+  border:none;
+  color:white;
+  font-size:16px;
+  border-radius:25px;
+  cursor:pointer;
+}
+
+.explore-btn:hover{
+  background:#a85a1a;
+  transform:scale(1.05);
+}

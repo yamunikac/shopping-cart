@@ -1,7 +1,27 @@
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 30px;
-  background-color: #f0f5fe;
+.products-page{
+  min-height:100vh;
+  background-image:url("/i4.png");
+  background-size:cover;
+  background-position:center;
+  padding:30px; 
+}
+
+.products-wrapper{
+  background: rgba(255,255,255,0.96);
+  margin: 20px;
+  padding: 50px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+.products-title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+.product-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:60px;
 }

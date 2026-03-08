@@ -9,8 +9,30 @@
 
 .logo {
   margin: 0;
+  cursor: pointer;
 }
 
+/* container for Home, Products, Cart */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Home & Products buttons */
+.nav-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  color: orange;
+}
+
+/* Cart button */
 .cart-btn {
   background-color: orange;
   color: white;
