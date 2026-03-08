@@ -25,3 +25,22 @@
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
   gap:60px;
 }
+
+
+@media (max-width: 768px) {
+  .products-wrapper{
+    margin:20px;
+    padding:30px;
+  }
+
+  .product-list{
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-list{
+    grid-template-columns:1fr;
+  }
+}

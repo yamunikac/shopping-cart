@@ -118,3 +118,21 @@
 .nav-arrow.right{
   right: 15px;
 }
+
+@media (max-width: 768px) {
+
+  .product-details{
+    flex-direction:column;
+    padding:20px;
+  }
+
+  .product-image img{
+    max-width:250px;
+    height:auto;
+  }
+
+  .details-buttons{
+    flex-direction:column;
+  }
+
+}

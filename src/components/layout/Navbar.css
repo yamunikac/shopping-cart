@@ -42,3 +42,20 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+@media (max-width: 768px) {
+
+  .navbar{
+    padding:10px 15px;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  .cart-btn{
+    padding:6px 10px;
+    font-size:14px;
+  }
+
+}
